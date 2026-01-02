@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/**********
+    all
+**********/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+
+  height: auto;
+  overflow: visible;
+}
+html {
+    font-size: 10px;
+    color: var(--gray-700);
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: "Freesentation";
+  font-weight: 400;
+  font-size: 1.6rem;
+  position: relative;
+}
+div { box-sizing: border-box; }
+hgroup { font-weight: 700; }
+ul, ol, li { list-style: none; padding: 0; }
+a { text-decoration: none; user-select: none; box-sizing: border-box; cursor: pointer;}
+img { user-select: none!important; }
+button {
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+.tal { text-align: left; }
+.tar { text-align: right; }
+.tac { text-align: center; }
+.hide { display: none!important; }
+/* Screen Reader Only */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/******* 공통속성 *******/
+.group-form {
+  display: flex;
+  align-items: center;
+}
+.group-form.column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.group-form > .right {
+  align-self: flex-end;
+}
+
+.ml-auto { margin-left: auto!important; }
+.mr-auto { margin-right: auto!important; }
+.mt-auto { margin-top: auto!important; }
+.mb-auto { margin-bottom: auto!important; }
+
+
+
+
+.flex { display: flex; }
+.space-evenly { justify-content: space-evenly!important; }
+.space-between { justify-content: space-between!important; }

@@ -36,89 +36,40 @@
   background-color: var(--blue);
   color: var(--dark);
 }
-#header {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  z-index: 1000;
+.grid {
+  display: grid;
+  gap: 4.8rem;
 }
-#footer {
-  width: 100%;
-  background: var(--yellowblack);
-  padding: 1.2rem 2rem;
-  border-top: 1px solid var(--light);
-  color: var(--light);
-}
+
+
 /******* heading *******/
 .greeting {
+  position: relative;
   font-size: 5vw;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
+}
+.greeting .bold {
+  font-weight: 800;
+}
+.greeting .guide {
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--gray-300);
 }
 .section-title {
   display: flex;
   align-items: flex-end;
-}
-.section-title > h2 {
-  font-size: 13vw;
-  font-weight: 900;
-  line-height: 1;
+  margin-bottom: 8vh;
 }
 .section-title > h3 {
-  font-size: 4vw;
+  font-size: 7vw;
   font-weight: 600;
-  line-height: 1;
-}
-h2, .section-h2 {
-  font-weight: 600;
-  line-height: 1.3;
-}
-h3, .section-h3 {
-  font-size: 2.8rem;
-  font-weight: 600;
-  line-height: 1.3;
+  line-height: 0.8;
 }
 
-/**********
-    header
-**********/
-.nav {
-  width: 100%;
-  height: 6rem;
-  display: flex;
-  justify-content: space-between;
-  color: var(--light-3);
-}
-.nav-inner {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-}
-.nav-icon {
-  width: 4rem;
-  height: 4rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-.nav-logo i, .nav-toggle i {
-  font-size: 2.8rem;
-  color: var(--dark);
-  line-height: 1;
-}
-.nav-panel[hidden] { display: none; }
-.nav-panel {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 280px;
-  background: #fff;
-  border: 1px solid #ddd;
-}
 
 /**********
     section
@@ -129,12 +80,10 @@ h3, .section-h3 {
   width: 100%;
   height: 100vh;
   border-radius: 2rem 2rem 0 0;
-  padding: 4.8rem;
   overflow: hidden;
 }
 /* section bg color */
 .section-1 {
-  height: calc(100vh - 6rem);
   background: var(--white);
   color: var(--dark);
 }
@@ -147,32 +96,61 @@ h3, .section-h3 {
   color: var(--dark);
 }
 .section-4 {
+  background: var(--purple);
+  color: var(--dark);
+}
+.section-5 {
   background: var(--yellowblack);
   color: var(--white);
 }
-.section-content {
-  width: 100%;
-  height: 100%;
+.section-wrap {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 4.8rem;
   overflow: hidden;
 }
-.section-2 .section-content,
-.section-3 .section-content {
-  height: auto;
-  padding-bottom: 20vh;
-}
-.section-inner {
+.section-content {
   display:flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
-.section-inner.column {
+.section-content.column {
   flex-direction: column;
 }
+
+
+/* section-1 scroll */
+.scroll-down {
+  text-align: center;
+  animation: down 0.8s alternate infinite;
+}
+@keyframes down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(50%);
+  }
+}
+.scroll-down p {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--orange);
+}
+.scroll-down i {
+  font-size: 3.6rem;
+  color: var(--orange);
+  transform: rotate(180deg);
+}
+.text { opacity: 0; }
+
+/* section-2 */
 .img-wrap {
+  position: relative;
   width: 30vw;
   height: auto;
 }
@@ -182,8 +160,155 @@ h3, .section-h3 {
 .img-wrap + * {
   margin-left: 4.8rem;
 }
-.text { opacity: 0; }
+.circle-point {
+  position: absolute;
+  right: -30px; 
+  top: 40px;
+  z-index: 100;
+  width:8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(20deg);
+}
+.desc-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.desc-wrap .sub-title {
+  font-size: 1.8rem;
+  color: var(--gray-300);
+  font-weight: 400;
+}
+.desc-wrap .main-title {
+  font-size: 4vw;
+  font-weight: 700;
+}
+.desc-wrap .desc-text {
+  font-size: 2rem;
+  line-height: 1.6;
+}
+.view-more {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  padding: 0 0.4rem 0.4rem 0;
+  font-size: 1.8rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.view-more:hover {
+  border-bottom-color: var(--dark);
+  transition: 0.2s ease;
+}
+.view-more i {
+  font-size: 2rem;
+  color: var(--dark);
+}
+.view-more span {
+  font-family: "Freesentation";
+  color: var(--dark);
+}
+.view-more:visited span {
+  color: var(--dark);
+}
 
+/* section-3 */
+.grid.history {
+  grid-template-columns: 50% 50%;
+}
+.summary,
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.grid-title {
+  font-size: 2.4rem;
+}
+.summary p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+.tl-wrap {
+  width: 100%;
+}
+.tl-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: all 1s;
+}
+.tl-item {
+  display: flex;
+  align-items: baseline;
+  gap: 2.4rem;
+  padding: 0.6rem 0;
+}
+.tl-item .year {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.tl-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.tl-desc li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.tl-desc .month {
+  width: 6.2rem;
+}
+
+[class*="badge-"] {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.badge-blue {
+  background-color: #E6F4FF;
+  color: #0088FF;
+  border: 1px solid #0088FF;
+}
+.badge-pink {
+  background-color: #FFEDF0;
+  color: #F0788F;
+  border: 1px solid #F0788F;
+}
+.badge-orange {
+  background: #ffede6;
+  color: var(--orange);
+  border: 1px solid var(--orange);
+}
+
+/* section-4 */
+.grid.strength {
+  grid-template-columns: repeat(2,1fr);
+}
+.grid.strategy {
+  grid-template-columns: repeat(2,1fr);
+}
+.grid-item i {
+  font-size: 4.8rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+.grid-item h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
 .skill-animation {
   width: 100%;
   overflow: hidden;
@@ -194,6 +319,9 @@ h3, .section-h3 {
   align-items: center;
   gap: 3.2rem;
   animation: marquee 30s linear infinite;
+}
+.skill-wrap.clone {
+  margin-left: 3.2rem;
 }
 @keyframes marquee {
   from {
@@ -206,21 +334,14 @@ h3, .section-h3 {
 .skill-animation:hover .skill-wrap {
   animation-play-state: paused;
 }
-
 .skill-wrap img{
   width: 8rem;
   aspect-ratio: 1/1;
 }
 
-
-
-
-
-/**********
-    footer
-**********/
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* section-5 */
+.footer {
+  position: absolute;
+  left: 0;
+  top: 0;
 }

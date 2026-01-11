@@ -128,7 +128,6 @@ window.addEventListener('scroll', function() {
 async function initApp() {
   await include(".app-header", "./includes/header.html");
   await include(".app-main", "./includes/main.html");
-  await include(".app-footer", "./includes/footer.html");
 
   initDarkMode();   // 다크모드 초기화
   initScrollNav();  // 스크롤 네비게이션 초기화 (헤더 로드 후 실행!)

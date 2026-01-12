@@ -29,7 +29,13 @@ body.dark-mode {
     background: var(--gray-900);
     color: var(--white);
     transition: all 0.5s ease;
-} 
+}
+.dark-mode .return-top i {
+    background: var(--pink-gradient);
+      -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .dark-mode .section-title {
     background: var(--pink-gradient);
   -webkit-background-clip: text;
@@ -163,6 +169,11 @@ h5 { font-size: 2.4rem;}
 #home .name h3 {
     font-size: 5vw;
     line-height: 0.8;
+}
+#home .name .name-cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 #home .home-bottom {
     width: 100%;
@@ -400,13 +411,14 @@ h5 { font-size: 2.4rem;}
     color: var(--gray-300);
 }
 
-/* return-top */
+
+/*******************
+*   return top
+********************/
 .return-top {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.2rem;
-    color: var(--gray-700);
     width: 5.5rem;
     height: 5.5rem;
     position: fixed;
@@ -417,4 +429,86 @@ h5 { font-size: 2.4rem;}
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
+}
+.return-top i {
+    font-size: 2.2rem;
+    color: var(--gray-700);
+}
+
+/*******************
+*   media query - mobile
+*******************/
+@media (max-width: 767px) {
+    .pc-only {
+        display: none;
+    }
+    h2 {
+        font-size: 12vw; 
+    }
+    section {
+        padding: 0 4rem;
+    }
+    header {
+        height: 6rem;
+    }
+    #home {
+        height: calc(100vh - 6rem);
+    }
+    #home .title-wrap {
+        padding-top: 3vh;
+    }
+    #home .name {
+        flex-direction: column;
+        padding: 0;
+    }
+    #home .name h3 {
+        font-size: 8vw;
+    }
+    .profile-wrap {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .profile .img-wrap {
+        align-items: center;
+    }
+    .profile .img-wrap img {
+        width: 50vw;
+    }
+    .introduce {
+        width: 100%;
+    }
+    .year {
+        width: auto;
+        flex: 0 0 9rem;
+    }
+    .year::before {
+        left: 9rem;
+        right: auto;
+    }
+    .year::after {
+        left: 9.3rem;
+        right: auto;
+    }
+    .tl-bar {
+        left: 9.6rem;
+    }
+    .tl-item {
+        gap: 3.6rem;
+    }
+    .work-grid {
+        grid-template-columns: 1fr;
+        padding: 10vh 0;
+    }
+    .contact-detail {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+    .contact-detail h3 {
+        font-size: 7vw;
+    }
+    .contact-bottom {
+        border-top: 0;
+    }
 }
